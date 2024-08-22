@@ -1,0 +1,14 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+	"include": ["src/**/*"],
+  "compilerOptions": {
+		"jsx": "preserve",
+
+		"types": ["unplugin-icons/types/astro"],
+
+		"baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"]
+    },
+  }
+}
