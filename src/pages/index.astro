@@ -1,6 +1,7 @@
 ---
 import '../modules/styles/tailwind.css'
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_AUTHOR, SITE_KEYWORDS } from '../modules/seo/site-data'
+import * as Core from '../modules/core'
 
 const CANONICAL_URL = new URL(Astro.url, Astro.site)
 ---
@@ -36,7 +37,11 @@ const CANONICAL_URL = new URL(Astro.url, Astro.site)
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="canonical" href={CANONICAL_URL} />
 	</head>
-	<body>
-		<h1>Astro</h1>
+
+	<body class="min-h-dvh flex flex-col bg-background text-foreground high-dpi:antialiased">
+		<Core.Header />
+		<Core.Content>
+		</Core.Content>
+		<Core.Footer />
 	</body>
 </html>
