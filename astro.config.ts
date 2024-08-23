@@ -8,8 +8,13 @@ import icons from 'unplugin-icons/vite'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://tic-tac-launch.perezpujantealejandro.dev',
-	integrations: [vue(), tailwind(), sitemap(), compress()],
+	integrations: [
+		vue({ devtools: true }),
+		tailwind({ applyBaseStyles: false, configFile: 'tailwind.config.ts' }),
+		sitemap(),
+		compress()
+	],
 	vite: {
-		plugins: [icons({ compiler: 'astro' })]
+		plugins: [icons({ compiler: 'vue3' })]
 	}
 })
